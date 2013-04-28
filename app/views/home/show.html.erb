@@ -1,0 +1,11 @@
+<h1>Typ ambulancie [<%= @city.name.upcase %>]</h1>
+
+<%= will_paginate @ambulances %>
+
+<table class="table table-striped">
+  <% @ambulances.each do |ambulance| %>
+      <tr>
+        <td><%= link_to ambulance.specialization , ambulance_path(ambulance) %></td>
+      </tr>
+  <%end%>
+</table>

@@ -1,5 +1,15 @@
+# -*- encoding : utf-8 -*-
 Zzz::Application.routes.draw do
   root :to => "home#index"
+
+  resources :ambulance
+  resources :ambulance_item do
+    resources :ratings
+  end
+  resources :ambulance_content
+  resources :home
+
+  resources :ratings
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

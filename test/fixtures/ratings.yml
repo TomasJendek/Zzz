@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  comment: MyString
+  value: 1
+  ambulance_item: 
+  ambulance_item_id: 1
+
+two:
+  comment: MyString
+  value: 1
+  ambulance_item: 
+  ambulance_item_id: 1

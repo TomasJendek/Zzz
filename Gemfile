@@ -9,6 +9,9 @@ gem 'sqlite3'
 
 gem 'mysql'
 
+gem 'kaminari'
+gem 'will_paginate', '~> 3.0'
+
 gem 'nokogiri'
 gem 'kaminari'
 gem 'net-ssh'

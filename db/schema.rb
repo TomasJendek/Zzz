@@ -11,16 +11,40 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130426043655) do
+ActiveRecord::Schema.define(:version => 20130428061154) do
+
+  create_table "ambulance_items", :force => true do |t|
+    t.integer  "ambulance_id"
+    t.string   "name"
+    t.string   "address"
+    t.text     "link"
+    t.integer  "rating_id"
+    t.string   "doctor"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "ambulance_items", ["ambulance_id"], :name => "index_ambulance_items_on_ambulance_id"
 
   create_table "ambulances", :force => true do |t|
     t.string   "specialization"
     t.integer  "region_id"
+    t.string   "link"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
 
   add_index "ambulances", ["region_id"], :name => "index_ambulances_on_region_id"
+
+  create_table "ratings", :force => true do |t|
+    t.string   "comment"
+    t.integer  "value"
+    t.integer  "ambulance_item_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  add_index "ratings", ["ambulance_item_id"], :name => "index_ratings_on_ambulance_item_id"
 
   create_table "regions", :force => true do |t|
     t.string   "name"

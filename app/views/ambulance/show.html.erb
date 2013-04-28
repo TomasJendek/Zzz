@@ -1,0 +1,12 @@
+<h1><%= @ambulance_type.specialization %> (Ambulancie)</h1>
+
+
+<table class="table table-striped">
+  <% @ambulance_item.each do |ambulance| %>
+      <tr>
+        <td><%= link_to ambulance.name, ambulance_content_path(ambulance.id)%></td>
+        <td><%= ambulance.address %></td>
+        <td><%= ambulance.doctor %> </td>
+      </tr>
+  <% end %>
+</table>

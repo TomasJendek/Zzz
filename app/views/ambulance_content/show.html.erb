@@ -1,0 +1,12 @@
+Toto je megastranka superambulancie
+<hr>
+<%= render 'ratings/form' %>
+
+<table class="table table-striped">
+  <% @ratings.each do |rating| %>
+      <tr>
+        <td><%= rating.comment %></td>
+        <td><%= rating.value %></td>
+      </tr>
+  <%end%>
+</table>
